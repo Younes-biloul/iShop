@@ -1,0 +1,82 @@
+﻿<Page x:Class="HandyControlProject3.Pages.Produit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HandyControlProject3.Pages"
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+      xmlns:hc="https://handyorg.github.io/handycontrol" 
+      mc:Ignorable="d" 
+      d:DesignHeight="740" d:DesignWidth="1030" 
+      Title="produit"
+      Language="en"
+      
+      >
+
+    <Grid HorizontalAlignment="Center"  Height="740" Width="1030" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Margin="10,0,10,5" CornerRadius="10" Effect="{StaticResource EffectShadow4}" Background="#CED2CC">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Margin="30" Grid.Column="0" >
+                    <hc:TextBox x:Name="T1"  hc:TitleElement.Title="CodeBar" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Scan Code Bar"   Height="70"  Width="320"  HorizontalAlignment="Left" TextChanged="T1_TextChanged"   />
+                    <hc:TextBox x:Name="T2"  hc:TitleElement.Title="Libéllé" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Saisir Le Nom De Produit"   Height="70"  Width="320"  HorizontalAlignment="Left"  />
+                    <hc:TextBox x:Name="T3"  hc:TitleElement.Title="Prix" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Saisir Le Prix De Produit"   Height="70"  Width="320"  HorizontalAlignment="Left"  />
+                    <hc:TextBox x:Name="T4"  hc:TitleElement.Title="Stock" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Saisir Le Stock De Produit"   Height="70"  Width="320"  HorizontalAlignment="Left"  />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="30">
+
+                    <hc:DateTimePicker x:Name="T5" Style="{StaticResource DateTimePickerExtend}" hc:TitleElement.Title="Date Production" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Saisir La Date"   Height="70"  Width="320" />
+                    <hc:DateTimePicker x:Name="T6" Style="{StaticResource DateTimePickerExtend}"  hc:TitleElement.Title="Date Expiration" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder="Saisir La Date"   Height="70"  Width="320" />
+                    <hc:ComboBox x:Name="T7"   hc:TitleElement.Title="Categorie" hc:TitleElement.TitlePlacement="top" hc:InfoElement.Placeholder=""   Height="70"  Width="320" SelectedIndex="0" SelectedValuePath="Tag"  />
+
+
+
+
+                    <StackPanel Orientation="Horizontal" Margin="30" HorizontalAlignment="Center">
+                        <Button x:Name="Bsupprimer" Style="{StaticResource ButtonDanger}"  Height="35" Content="Supprimer" Width="100" Margin="5" Click="Bsupprimer_Click"/>
+                        <Button x:Name="Bmodifier" Style="{StaticResource ButtonPrimary}"  Height="35"  Content="Modifier" Width="100" Margin="5" Click="Bmodifier_Click"/>
+                        <Button x:Name="Bajouter" Style="{StaticResource ButtonSuccess}"  Height="35"  Content="Ajouter" Width="100" Margin="5" Click="Bajouter_Click"/>
+
+                    </StackPanel>
+                    <hc:AxleCanvas Height="100"/>
+
+
+
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+
+
+        <Border CornerRadius="10" Background="#CED2CC" Grid.Row="1" Margin="10,5,10,0" Effect="{StaticResource EffectShadow4}"  >
+            <DataGrid x:Name="dgv_produit"  HeadersVisibility="All" RowHeaderWidth="60"  ColumnWidth="*"  hc:DataGridAttach.ShowRowNumber="True"  Background="Transparent" SelectionChanged="dgv_produit_SelectionChanged" IsReadOnly="True"   >
+
+                <DataGrid.RowHeaderTemplate  >
+
+                    <DataTemplate >
+                        <CheckBox IsChecked="{Binding IsSelected,RelativeSource={RelativeSource AncestorType=DataGridRow}}"  />
+                    </DataTemplate>
+
+
+                </DataGrid.RowHeaderTemplate>
+
+            </DataGrid>
+        </Border>
+
+
+
+    </Grid>
+</Page>

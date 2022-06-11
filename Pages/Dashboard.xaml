@@ -1,0 +1,56 @@
+﻿<Page x:Class="HandyControlProject3.Pages.Dashboard"
+     
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:uc="clr-namespace:HandyControlProject3.UserControls"
+      xmlns:local="clr-namespace:HandyControlProject3.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="740" d:DesignWidth="1030"
+      Title="dachboard">
+
+    <Grid >
+        <Border Background="#eee" CornerRadius="20" Margin="5,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+               
+
+                <!--Title-->
+                <TextBlock FontSize="26" Foreground="Black" Margin="50 35 0 20" Text="Bienvenue" HorizontalAlignment="Left"/>
+
+                <!--Info Cards-->
+                <Grid Grid.Row="1" Margin="50 20 15 40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <uc:InfoCard x:Name="Tproduit" Grid.Column="0" Title="Total Produit" Number="00" Icon="ProductHunt" Background1="#827BFF" Background2="#D9B5FF" EllipseBackground1="#B298FD" EllipseBackground2="#E4BBFF"/>
+                    <uc:InfoCard x:Name="Torder" Grid.Column="1" Title="Total Orders" Number="00" Icon="ShoppingCart" Background1="#FD8A87" Background2="#F3AB92" EllipseBackground1="#FBD5A8" EllipseBackground2="#FDB89B"/>
+                    <uc:InfoCard x:Name="Trenenue"  Grid.Column="2" Title="Total Revenue" Number="00DH" Icon="Coins" Background1="#FC84CB" Background2="#FC8FAE" EllipseBackground1="#FC8FAE" EllipseBackground2="#FFABE6"/>
+                </Grid>
+
+                <!--Chart Section-->
+                <Grid Grid.Row="2">
+                   
+
+                    
+
+                </Grid>
+                <StackPanel/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
+

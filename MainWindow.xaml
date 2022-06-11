@@ -1,0 +1,56 @@
+﻿<hc:Window x:Class="HandyControlProject3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="Login" 
+        WindowStartupLocation="CenterScreen"
+        ShowTitle="True"
+        Height="400" 
+        Width="400"
+        ResizeMode="NoResize" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        BorderThickness="0"
+        
+           >
+
+    <Grid Background="Transparent">
+
+        <Border  BorderThickness="0"  CornerRadius="10" Width="400" Height="400"  Background="#eee" >
+            
+            
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+
+                <fa:IconImage Icon="UserCircle" Width="50" Margin="0,0,0,15" Foreground="#FF326CF3" Effect="{StaticResource EffectShadow4}" />
+
+
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <hc:TextBox x:Name="T1" hc:TitleElement.Title="User Name" hc:TitleElement.TitlePlacement="Left" hc:InfoElement.Placeholder="Enter user name.."   hc:InfoElement.Necessary="True"  Height="40"  Width="300"  HorizontalAlignment="Left" Margin="0,0,0,20" />
+                <hc:PasswordBox x:Name="T2" hc:TitleElement.Title="Password  " hc:TitleElement.TitlePlacement="Left" hc:InfoElement.Placeholder="Enter Password.."   hc:InfoElement.Necessary="True"  Height="40"  Width="300"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,20"  hc:ShowEyeButton="True" ShowClearButton="True"/>
+                <ToggleButton x:Name="togglebtn" Style="{StaticResource ToggleButtonSwitch}"   Content="I'm Admin" HorizontalAlignment="Left" Margin="0,0,0,15" Width="240" />
+
+                <StackPanel Orientation="Horizontal" Width="223" HorizontalAlignment="Right">
+                    <ToggleButton x:Name="bconcter" Width="110" Content="Close"  Style="{StaticResource ToggleButtonDanger}"   Click="bclose_Click"/>
+
+                    <ToggleButton x:Name="bclose" MinWidth="104.5"  Content="Connecter"  Style="{StaticResource ToggleButtonPrimary}" Margin="5,0,0,0"  Click="bconcter_Click"/>
+                </StackPanel>
+            </StackPanel>
+            
+            
+
+
+
+
+
+
+        </StackPanel>
+        </Border>
+    </Grid>
+</hc:Window>

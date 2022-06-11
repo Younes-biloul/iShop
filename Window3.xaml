@@ -1,0 +1,82 @@
+﻿<Window x:Class="HandyControlProject3.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HandyControlProject3"
+        mc:Ignorable="d"
+        xmlns:hc="https://handyorg.github.io/handycontrol"               
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"      
+        WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent"  Height="740" Width="1280">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Left Menu-->
+        <Border CornerRadius="10" Background="#CED2CC">
+
+
+            <StackPanel>
+                <!--Username-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 35 0 0">
+                    <Border CornerRadius="10" Width="40" Height="40" Background="#FF1585D1">
+
+
+                        <fa:IconImage Icon="User" Height="22"/>
+                    </Border>
+
+                    <StackPanel Margin="5 0 0 0" VerticalAlignment="Center">
+                        <TextBlock x:Name="userN" Text="User" FontSize="15"  Foreground="Black" FontWeight="Bold" />
+                    </StackPanel>
+                </StackPanel>
+
+
+                <Separator Height="0.8" Background="Black" FontWeight="Bold" Margin="20 30 20 30"/>
+
+                <!--Menu Buttons-->
+
+                <Button Style="{StaticResource menuButtonActive}" x:Name="Bvente"  >
+
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="CashRegister" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Vente" Style="{StaticResource menuButtonText}">
+
+                        </TextBlock>
+
+
+                    </StackPanel>
+
+                </Button>
+
+
+               
+
+                <Button x:Name="Logout" Style="{StaticResource menuButton}" Click="Logout_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="PowerOff" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Logout" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1"    >
+
+
+            <Frame Grid.Column="1" x:Name="frame1" Source="Pages/Vente.xaml"   NavigationUIVisibility="Hidden" BorderThickness="0">
+
+
+            </Frame>
+
+        </Border>
+
+
+
+
+    </Grid>
+
+</Window>
